@@ -122,13 +122,15 @@ dnf5 -y install --setopt=install_weak_deps=False \
     kio-extras \
     libsmbclient \
     cifs-utils \
-    waydroid \
     kscreen \
     konsole \
     dolphin \
     ark \
     gwenview \
-    kwrite
+    kwrite \
+    plasma-discover \
+    plasma-discover-flatpak \
+    plasma-discover-notifier 
 
 # feedbackd's role-routing sinks can wedge Steam audio during session startup.
 rm -f /usr/share/wireplumber/wireplumber.conf.d/media-role-nodes.conf
@@ -161,8 +163,6 @@ dnf5 -y install --setopt=install_weak_deps=False \
     --setopt=copr-ublue-os-packages.gpgcheck=0 \
     --setopt=copr-ublue-os-packages.repo_gpgcheck=0 \
     flatpak \
-    bazaar \
-    krunner-bazaar
 
 mkdir -p /etc/flatpak/remotes.d
 curl --retry 3 -fsSL -o /etc/flatpak/remotes.d/flathub.flatpakrepo \
